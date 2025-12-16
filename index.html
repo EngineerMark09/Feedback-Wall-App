@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Wall - Share Your Thoughts</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>💬 Feedback Wall</h1>
+            <p>Share your thoughts anonymously!</p>
+        </header>
+
+        <!-- Post Form -->
+        <section class="post-form-section">
+            <form id="feedbackForm" class="post-form">
+                <input 
+                    type="text" 
+                    id="nameInput" 
+                    placeholder="Your name (optional)" 
+                    maxlength="50"
+                >
+                <textarea 
+                    id="messageInput" 
+                    placeholder="Write your message here..." 
+                    required 
+                    maxlength="500"
+                    rows="3"
+                ></textarea>
+                <div class="form-footer">
+                    <span class="char-count"><span id="charCount">0</span>/500</span>
+                    <button type="submit" id="submitBtn">
+                        <span class="btn-text">Post Message</span>
+                        <span class="btn-loading">Posting...</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats">
+            <div class="stat-item">
+                <span class="stat-number" id="totalPosts">0</span>
+                <span class="stat-label">Total Posts</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="todayPosts">0</span>
+                <span class="stat-label">Today</span>
+            </div>
+        </section>
+
+        <!-- Messages List -->
+        <section class="messages-section">
+            <div class="messages-header">
+                <h2>Recent Messages</h2>
+                <button id="refreshBtn" class="refresh-btn" title="Refresh">🔄</button>
+            </div>
+            <div id="messagesList" class="messages-list">
+                <div class="loading">Loading messages...</div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ❤️ | Powered by Supabase</p>
+        </footer>
+    </div>
+
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
